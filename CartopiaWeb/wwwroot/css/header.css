@@ -1,0 +1,103 @@
+﻿body {
+    width: 800px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.navbar {
+    height: 200px;
+    margin: 10px;
+}
+
+.navbar__container {
+    margin: 8px 8px 0 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__main__logo {
+    width: 200px;
+}
+
+.navbar__login {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+    .navbar__login img {
+        width: 25px;
+        height: 25px;
+    }
+
+.nav__item__login {
+    margin-right: 5px;
+}
+
+
+/* Sell and Buy containers */
+
+.sell-buy__container {
+    display: flex;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.buy__car__ref {
+    background-color: #333333;
+    border-radius: 10px 10px 0 0;
+    width: 90px;
+    height: 30px;
+    margin: 0 8px 0 8px;
+    transform: scaleY(1.3);
+    transform-origin: top;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+
+.sell__car__ref {
+    background-color: #126c93;
+    border-radius: 10px 10px 0 0;
+    width: 90px;
+    height: 30px;
+    color: white;
+    transform: scaleY(1.3);
+    transform-origin: top;
+    font-size: 15px;
+    text-decoration: none;
+    position: relative;
+    z-index: -1;
+}
+
+.buy__car__ref,
+.sell__car__ref {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy__car__container__search {
+    border: 1px solid #333333;
+    margin: 0px 8px 0 8px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #333333;
+    position: relative;
+    z-index: 2;
+}
+
+.buy__car__inner {
+    border: 1px solid white;
+    margin: 10px 8px 0 8px;
+    height: 30px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: white;
+}
