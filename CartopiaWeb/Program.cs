@@ -1,7 +1,18 @@
+using CartopiaWeb.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<CartopiaDbContext>(o =>
+{
+    o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<CartopiaDbContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
 
