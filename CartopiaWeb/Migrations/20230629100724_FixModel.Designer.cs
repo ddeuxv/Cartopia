@@ -4,6 +4,7 @@ using CartopiaWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CartopiaWeb.Migrations
 {
     [DbContext(typeof(CartopiaDbContext))]
-    partial class CartopiaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230629100724_FixModel")]
+    partial class FixModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,7 +48,7 @@ namespace CartopiaWeb.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("Photo")
+                    b.Property<byte[]>("PhotoBinary")
                         .HasColumnType("varbinary(max)");
 
                     b.Property<decimal>("Price")

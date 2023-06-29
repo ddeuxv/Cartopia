@@ -6,16 +6,18 @@ namespace CartopiaWeb.Repositories
     {
         public byte[]? GetPhotoBytes(IFormFile photo)
         {
+            byte[] photoBytes = null;
+
             if (photo != null && photo.Length > 0)
             {
                 using (var memoryStream = new MemoryStream())
                 {
                     photo.CopyTo(memoryStream);
-                    return memoryStream.ToArray();
+                    photoBytes =  memoryStream.ToArray();
                 }
             }
 
-            return null;
+            return photoBytes;
         }
     }
 }

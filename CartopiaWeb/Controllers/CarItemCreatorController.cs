@@ -19,6 +19,12 @@ namespace CartopiaWeb.Controllers
             _carRepository = carCreator;
         }
 
+
+        public IActionResult SalePage()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult SendItems(CarInfo carInfo, IFormFile photo)
         {
@@ -27,7 +33,8 @@ namespace CartopiaWeb.Controllers
             _context.Cars.Add(newCar);
             _context.SaveChanges();
 
-            return View();
+            return RedirectToAction("Index", "Home");
         }
+
     }
 }

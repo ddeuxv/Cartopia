@@ -17,7 +17,7 @@ namespace CartopiaWeb.Repositories
                 Price = car.Price,
                 Bodyshell = car.Bodyshell,
                 PhoneNumber = car.PhoneNumber,
-                PhotoBinary = photoInBytes,
+                Photo = photoInBytes,
                 Description = car.Description,
             };
 

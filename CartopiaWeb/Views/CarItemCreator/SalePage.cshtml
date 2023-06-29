@@ -1,1 +1,64 @@
-﻿<p>sale page</p>
+﻿@using CartopiaWeb.Models.Enums;
+@using CartopiaWeb.Models;
+@model SelectEnumsViewModel
+
+<form class="form" asp-controller="CarItemCreator" asp-action="SendItems" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <div class="form-group-block1"><label for="TypeOfBrand">Brand</label></div>
+        <div class="form-group-block2"><input type="text" class="form-control" id="TypeOfBrand" name="TypeOfBrand"></div>
+    </div>
+    
+    <div class="form-group">
+        <div class="form-group-block1"><label for="Model">Model</label></div>
+        <div class="form-group-block2"><input type="text" class="form-control" id="Model" name="Model"></div>
+    </div>
+    
+    <div class="form-group">
+        <div class="form-group-block1"><label for="Bodyshell">Bodyshell</label></div>
+        <div class="form-group-block2">
+            <select class="form-control" asp-for="Bodyshell" asp-items="Html.GetEnumSelectList<Bodyshell>()">
+            </select>
+        </div>
+    </div>
+    
+
+    <div class="form-group">
+        <div class="form-group-block1"><label for="EngineType">EngineType</label></div>
+        <div class="form-group-block2">
+            <select class="form-control" asp-for="EngineType" asp-items="Html.GetEnumSelectList<EngineType>()">
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-group-block1"><label for="Region">Region</label></div>
+        <div class="form-group-block2">
+            <select class="form-control" asp-for="Region" asp-items="Html.GetEnumSelectList<Region>()">
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-group-block1"><label for="Price">Price</label></div>
+        <div class="form-group-block2"><input type="text" class="form-control" id="Price" name="Price"></div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-group-block1"><label for="Year">Year</label></div>
+        <div class="form-group-block2"><input type="text" class="form-control" id="Year" name="Year"></div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-group-block1"><label for="Photo">Photo</label></div>
+        <div class="form-group-block2"><input type="file" class="form-control" id="Photo" name="photo"></div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-group-block1"><label for="PhoneNumber">Phone Number</label></div>
+        <div class="form-group-block2"><input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber"></div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+
