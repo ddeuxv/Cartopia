@@ -4,6 +4,6 @@ namespace CartopiaWeb.Interfaces
 {
     public interface ICarCreator
     {
-        void CreateCar(CarInfo car);
+        CarInfo CreateCar(CarInfo car, byte[] photoInBytes);
     }
 }

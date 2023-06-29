@@ -25,7 +25,7 @@ namespace CartopiaWeb.Models
         public byte[]? PhotoBinary { get; set; } //upload file throw IFileLoad
 
         [StringLength(500)]
-        public string Description { get; set; } // text area send with post
+        public string? Description { get; set; } // text area send with post
 
     }
 }

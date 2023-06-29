@@ -12,6 +12,6 @@ namespace CartopiaWeb.Data
         }
 
 
-        DbSet<CarInfo> Cars { get; set; }
+        public DbSet<CarInfo> Cars { get; set; }
     }
 }

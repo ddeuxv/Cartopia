@@ -1,4 +1,5 @@
-﻿using CartopiaWeb.Interfaces;
+﻿using CartopiaWeb.Data;
+using CartopiaWeb.Interfaces;
 using CartopiaWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,17 +9,24 @@ namespace CartopiaWeb.Controllers
     {
         private readonly IPhotoConverter _photoConverter;
         private readonly ICarCreator _carRepository;
+        private readonly CartopiaDbContext _context;
+        private CarInfo? newCar { get; set; } = null;
 
-
-        public CarItemCreatorController(IPhotoConverter converter, ICarCreator carcreator)
+        public CarItemCreatorController(CartopiaDbContext context, IPhotoConverter converter, ICarCreator carCreator)
         {
+            _context = context;
             _photoConverter = converter;
-            _carRepository = carcreator;
+            _carRepository = carCreator;
         }
 
         [HttpPost]
-        public IActionResult SendItems(CarInfo carInfo)
+        public IActionResult SendItems(CarInfo carInfo, IFormFile photo)
         {
+            var photoInBytes = _photoConverter.GetPhotoBytes(photo);
+            newCar = _carRepository.CreateCar(carInfo, photoInBytes);
+            _context.Cars.Add(newCar);
+            _context.SaveChanges();
+
             return View();
         }
     }

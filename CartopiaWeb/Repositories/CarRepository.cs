@@ -5,7 +5,7 @@ namespace CartopiaWeb.Repositories
 {
     public class CarRepository : ICarCreator
     {
-        public void CreateCar(CarInfo car)
+        public CarInfo CreateCar(CarInfo car, byte[] photoInBytes)
         {
             CarInfo newCar = new()
             {
@@ -17,10 +17,11 @@ namespace CartopiaWeb.Repositories
                 Price = car.Price,
                 Bodyshell = car.Bodyshell,
                 PhoneNumber = car.PhoneNumber,
-                PhotoBinary = car.PhotoBinary,
+                PhotoBinary = photoInBytes,
                 Description = car.Description,
-            }; 
+            };
 
+            return newCar;
         }
     }
 }

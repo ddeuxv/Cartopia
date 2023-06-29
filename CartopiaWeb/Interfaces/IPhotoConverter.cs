@@ -2,7 +2,7 @@
 {
     public interface IPhotoConverter
     {
-        public byte[] GetPhotoBytes(IFormFile photo);
+        public byte[]? GetPhotoBytes(IFormFile photo);
 
     }
 }
