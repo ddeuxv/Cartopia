@@ -1,12 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CartopiaWeb.Interfaces;
+using CartopiaWeb.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CartopiaWeb.Controllers
 {
     public class CarItemCreatorController : Controller
     {
-        // implement car controller for sale items
-        [HttpGet]
-        public IActionResult SalePage()
+        private readonly IPhotoConverter _photoConverter;
+        private readonly ICarCreator _carRepository;
+
+
+        public CarItemCreatorController(IPhotoConverter converter, ICarCreator carcreator)
+        {
+            _photoConverter = converter;
+            _carRepository = carcreator;
+        }
+
+        [HttpPost]
+        public IActionResult SendItems(CarInfo carInfo)
         {
             return View();
         }

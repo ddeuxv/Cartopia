@@ -1,8 +1,13 @@
 using CartopiaWeb.Data;
+using CartopiaWeb.Interfaces;
+using CartopiaWeb.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<ICarCreator, CarRepository>();
+builder.Services.AddScoped<IPhotoConverter, PhotoConverterRepository>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
