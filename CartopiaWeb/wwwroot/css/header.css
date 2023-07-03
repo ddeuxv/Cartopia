@@ -45,6 +45,7 @@
     margin-top: 20px;
     position: relative;
     z-index: 1;
+
 }
 
 .buy__car__ref {
@@ -60,21 +61,27 @@
     text-decoration: none;
 }
 
+    .buy__car__ref:hover,
+    .sell__car__ref:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: .2s linear;
+    }
+
+    .sell__car__ref {
+        background-color: #126c93;
+        border-radius: 10px 10px 0 0;
+        width: 90px;
+        height: 30px;
+        color: white;
+        transform: scaleY(1.3);
+        transform-origin: top;
+        font-size: 15px;
+        text-decoration: none;
+        position: relative;
+        z-index: -1;
+    }
 
 
-.sell__car__ref {
-    background-color: #126c93;
-    border-radius: 10px 10px 0 0;
-    width: 90px;
-    height: 30px;
-    color: white;
-    transform: scaleY(1.3);
-    transform-origin: top;
-    font-size: 15px;
-    text-decoration: none;
-    position: relative;
-    z-index: -1;
-}
 
 .buy__car__ref,
 .sell__car__ref {
