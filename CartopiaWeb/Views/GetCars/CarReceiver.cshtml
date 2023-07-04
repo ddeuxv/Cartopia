@@ -1,0 +1,18 @@
+﻿@model CarListViewModel
+
+@foreach (var car in Model.Cars)
+{
+    <div class="car-block">
+        <h2>@car.Name</h2>
+        <p>Region: @car.Region</p>
+        <p>Year: @car.Year</p>
+        <p>Engine Type: @car.EngineType</p>
+        <p>Price: @car.Price</p>
+        <p>Bodyshell: @car.Bodyshell</p>
+        <p>Phone Number: @car.PhoneNumber</p>
+        @if (car.Photo != null)
+        {
+            <img width="400" height="300" src="data:image/jpeg;base64, @Convert.ToBase64String(car.Photo)" alt="Car Photo" />
+        }
+    </div>
+}

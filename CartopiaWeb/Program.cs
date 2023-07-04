@@ -6,8 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<ICarCreator, CarRepository>();
+builder.Services.AddScoped<ICarsReceiver, CarsReceiverRepository>();
+builder.Services.AddScoped<ICarCreator, CarCreatorRepository>();
 builder.Services.AddScoped<IPhotoConverter, PhotoConverterRepository>();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

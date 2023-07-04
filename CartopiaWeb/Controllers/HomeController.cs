@@ -14,7 +14,7 @@ namespace CartopiaWeb.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("CarReceiver", "GetCars");
         }
     }
 }

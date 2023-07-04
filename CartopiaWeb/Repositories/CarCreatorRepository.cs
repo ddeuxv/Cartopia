@@ -3,7 +3,7 @@ using CartopiaWeb.Models;
 
 namespace CartopiaWeb.Repositories
 {
-    public class CarRepository : ICarCreator
+    public class CarCreatorRepository : ICarCreator
     {
         public CarInfo CreateCar(CarInfo car, byte[] photoInBytes)
         {

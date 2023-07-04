@@ -13,5 +13,7 @@ namespace CartopiaWeb.Models.DTOs
 
             public Bodyshell Bodyshell { get; set; }
             public string? PhoneNumber { get; set; }
+
+           public byte[]? Photo { get; set; }
     }
 }
