@@ -1,10 +1,4 @@
-﻿body {
-    width: 800px;
-    margin: 0 auto;
-    height: 100vh;
-}
-
-.navbar {
+﻿.navbar {
     height: 200px;
     margin: 10px;
 }

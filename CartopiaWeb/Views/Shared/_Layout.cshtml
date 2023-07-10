@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/selectForm.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/sellCarsBlock.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -22,7 +23,7 @@
                 </button>
             </div>
             <div class="sell-buy__container">
-                <a class="buy__car__ref" href="https://www.google.com.ua/?hl=ru">Buy</a>
+                <a class="buy__car__ref" href="@Url.Action("Index",  "Home")">Buy</a>
                 <a class="sell__car__ref" href="@Url.Action("SalePage",  "CarItemCreator")">Sale</a>
             </div>
             <div class="buy__car__container__search">
