@@ -1,4 +1,4 @@
-# Cartopia
-"Cartopia: A platform for seamless car buying and selling experience." 
+Technologies
 
-Cartopia is a comprehensive online store designed to facilitate the buying and selling of automobiles. Whether you're a car enthusiast looking for your dream vehicle or a seller aiming to reach a wide audience, Cartopia has got you covered !
+Platform: .NET 6 <br />
+Database: MS SQL Server, Entity Framework Core
