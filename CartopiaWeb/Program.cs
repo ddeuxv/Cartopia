@@ -1,5 +1,6 @@
 using CartopiaWeb.Data;
 using CartopiaWeb.Interfaces;
+using CartopiaWeb.Models;
 using CartopiaWeb.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,8 @@ builder.Services.AddDbContext<CartopiaDbContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<CartopiaDbContext>().AddDefaultTokenProviders();
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<CartopiaDbContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -34,6 +36,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication(); ;
 
 app.UseAuthorization();
 
