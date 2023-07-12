@@ -14,8 +14,7 @@
     <div class="form-group">
         <div class="form-group-block1"><label for="Bodyshell">Bodyshell</label></div>
         <div class="form-group-block2">
-            <select class="form-control" asp-for="Bodyshell" asp-items="Html.GetEnumSelectList<Bodyshell>()">
-            </select>
+            <select class="form-control" asp-for="Bodyshell" asp-items="Html.GetEnumSelectList<Bodyshell>()"></select>
         </div>
     </div>
     
@@ -23,8 +22,7 @@
     <div class="form-group">
         <div class="form-group-block1"><label for="EngineType">EngineType</label></div>
         <div class="form-group-block2">
-            <select class="form-control" asp-for="EngineType" asp-items="Html.GetEnumSelectList<EngineType>()">
-            </select>
+            <select class="form-control" asp-for="EngineType" asp-items="Html.GetEnumSelectList<EngineType>()"></select>
         </div>
     </div>
 
@@ -58,7 +56,12 @@
 
     <div class="form-group">
         <div class="form-group-block1"><label for="Photo">Photo</label></div>
-        <div class="form-group-block2"><input type="file" class="form-control" id="Photo" name="photo"></div>
+        <div class="form-group-block2">
+            <label for="Photo" class="custom-file-upload">
+                <input type="file" id="Photo" name="photo" class="form-control">
+                Choose File
+            </label>
+        </div>
     </div>
 
     <button type="submit" class="btn btn-primary">Create</button>

@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Cartopia</title>
     <link rel="icon" type="image/x-icon" href="~/favicon.ico">
-    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/selectForm.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/main.css">
-    <link rel="stylesheet" href="~/css/sellCarsBlock.css">
+    <link rel="stylesheet" href="~/css/main.css"/>
+    <link rel="stylesheet" href="~/css/content.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -18,9 +16,14 @@
         <div class="navbar">
             <div class="navbar__container">
                 <a href="@Url.Action("Index",  "Home")"><img src="~/img/logo-cartopia-main.png" alt="main__logo" class="header__main__logo nav__item__logo"></a>
-                <div class="navbar__login nav__item__login">
-                    <a href="@Url.Action("Register",  "Account")"><img src="~/img/login-icon.png"></a>
-                </div>
+                <div class="navbar__user__login">
+                    <div class="navbar__login nav__item__login">
+                        <a href="@Url.Action("Login",  "Account")">Login</a>
+                    </div>
+                    <div class="navbar__login nav__item__login">
+                        <a href="@Url.Action("Register",  "Account")">Register</a>
+                    </div>
+                </div>   
             </div>
             <div class="sell-buy__container">
                 <a class="buy__car__ref" href="@Url.Action("Index",  "Home")">Buy</a>

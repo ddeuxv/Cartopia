@@ -16,7 +16,7 @@ namespace CartopiaWeb.Configuration
             },
             new IdentityRole
             {
-                Name = "Administrator",
+                Name = "Admin",
                 NormalizedName = "ADMINISTRATOR"
             });
         }

@@ -1,4 +1,5 @@
-﻿.navbar {
+﻿/* Navbar styling */
+.navbar {
     height: 200px;
     margin: 10px;
 }
@@ -14,6 +15,7 @@
 }
 
 .navbar__login {
+    border: 1px solid black;
     display: flex;
     align-items: center;
     background: none;
@@ -31,8 +33,30 @@
     margin-right: 5px;
 }
 
-/* Sell and Buy containers */
+.navbar__user__login {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+}
 
+.navbar__login a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #126c93;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+    .navbar__login a:hover {
+        background-color: #0c526e;
+    }
+
+
+/* Sell and Buy containers */
 .sell-buy__container {
     display: flex;
     margin-top: 20px;
@@ -86,6 +110,7 @@
     background-color: white;
 }
 
+/* Form styling */
 .form {
     display: flex;
     flex-direction: column;
@@ -112,6 +137,21 @@
     border-radius: 4px;
 }
 
+.btn-primary {
+    padding: 10px 20px;
+    background-color: #126c93;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #0c526e;
+    }
+
 .btn {
     padding: 10px 20px;
     background-color: #126c93;
@@ -120,20 +160,51 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 15px;
+    transition: background-color 0.3s ease;
 }
 
-
-.form-group {
+/* Additional form styling */
+.outer__carinfo__block {
     display: flex;
+    align-items: flex-start;
+    border-radius: 10px 10px 10px 10px;
+    justify-content: space-around;
+    margin: 20px;
     align-items: center;
-    margin-bottom: 10px;
+    background-color: #33333349;
+    padding: 10px 0px 10px 0px;
 }
 
-.form-group-block1 {
-    flex: 0 0 120px;
+.car__item__img {
+    width: 400px;
+    height: 185px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.form-group-block2 {
-    flex: 1;
+.items__container {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-between;
 }
- 
+
+.car__info__field {
+    height: 22px;
+    width: 400px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #126c93;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+    .custom-file-upload input[type="file"] {
+        display: none;
+    }
