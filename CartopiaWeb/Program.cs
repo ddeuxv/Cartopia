@@ -21,7 +21,10 @@ builder.Services.AddDbContext<CartopiaDbContext>(o =>
 });
 
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<CartopiaDbContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddSignInManager<SignInManager<ApplicationUser>>()
+    .AddEntityFrameworkStores<CartopiaDbContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 

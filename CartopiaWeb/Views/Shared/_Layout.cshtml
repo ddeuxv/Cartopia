@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -15,15 +18,35 @@
     <header>
         <div class="navbar">
             <div class="navbar__container">
-                <a href="@Url.Action("Index",  "Home")"><img src="~/img/logo-cartopia-main.png" alt="main__logo" class="header__main__logo nav__item__logo"></a>
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/img/logo-cartopia-main.png" alt="main__logo" class="header__main__logo nav__item__logo">
+                </a>
                 <div class="navbar__user__login">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <div class="navbar__login nav__item__login">
+                            <a class="text-dark" asp-controller="Home" asp-action="Index" title="Welcome">Welcome @User.Identity.Name!</a>
+                        </div>
+                        <div class="navbar__login nav__item__login">
+                            <form class="form" asp-controller="Account" asp-action="Logout">
+                                <button type="submit" class="btn btn-link text-info">Logout</button>
+                            </form>
+                        </div>
+                        
+                    }
+                    else
+                    {
+                        <div class="navbar__login nav__item__login">
+                            <a href="@Url.Action("Login", "Account", new { returnUrl = Context.Request.Path })">Login</a>
+                        </div>
+                        <div class="navbar__login nav__item__login">
+                            <a href="@Url.Action("Register", "Account")">Register</a>
+                        </div>
+                    }
                     <div class="navbar__login nav__item__login">
-                        <a href="@Url.Action("Login",  "Account")">Login</a>
+                        <a href="@Url.Action("Index", "Test")">Unreachable Info</a>
                     </div>
-                    <div class="navbar__login nav__item__login">
-                        <a href="@Url.Action("Register",  "Account")">Register</a>
-                    </div>
-                </div>   
+                </div>
             </div>
             <div class="sell-buy__container">
                 <a class="buy__car__ref" href="@Url.Action("Index",  "Home")">Buy</a>
