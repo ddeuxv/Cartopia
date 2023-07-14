@@ -7,12 +7,12 @@ namespace CartopiaWeb.Controllers
     public class UserRoomController : Controller
     {
         private readonly ICarsReceiver _carsReceiver;
-        private readonly ICarRemover _carRemover;
+        private readonly ICarEditor _carEditor;
 
-        public UserRoomController(ICarsReceiver carsReceiver, ICarRemover carRemover)
+        public UserRoomController(ICarsReceiver carsReceiver, ICarEditor carEditor)
         {
             _carsReceiver = carsReceiver;
-            _carRemover = carRemover;
+            _carEditor = carEditor;
         }
 
         public IActionResult Index()
@@ -21,9 +21,9 @@ namespace CartopiaWeb.Controllers
             return View(viewModel);
         }
 
-        public IActionResult Delete(string id) 
+        public IActionResult Remove(string id) 
         {
-            _carRemover.Remover(id);
+            _carEditor.Delete(id);
 
             return RedirectToAction("Index", "Home");
         }

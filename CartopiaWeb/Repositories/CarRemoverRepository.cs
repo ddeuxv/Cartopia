@@ -3,7 +3,7 @@ using CartopiaWeb.Interfaces;
 
 namespace CartopiaWeb.Repositories
 {
-    public class CarRemoverRepository : ICarRemover
+    public class CarRemoverRepository : ICarEditor
     {
         private readonly CartopiaDbContext _context;
 
@@ -12,7 +12,7 @@ namespace CartopiaWeb.Repositories
             _context = context;
         }
 
-        public void Remover(string id)
+        public void Delete(string id)
         {
             var carToDelete = _context.Cars.FirstOrDefault(c => c.CreatedByUserId == id);
             if (carToDelete != null)
