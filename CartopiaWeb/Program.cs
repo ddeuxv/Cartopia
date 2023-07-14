@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICarsReceiver, CarsReceiverRepository>();
 builder.Services.AddScoped<ICarCreator, CarCreatorRepository>();
 builder.Services.AddScoped<IPhotoConverter, PhotoConverterRepository>();
+builder.Services.AddScoped<ICarRemover, CarRemoverRepository>();
 
 
 // Add services to the container.

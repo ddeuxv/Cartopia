@@ -15,5 +15,7 @@ namespace CartopiaWeb.Models.DTOs
             public string? PhoneNumber { get; set; }
 
            public byte[]? Photo { get; set; }
+
+           public string? CreatedById { get; set; }
     }
 }

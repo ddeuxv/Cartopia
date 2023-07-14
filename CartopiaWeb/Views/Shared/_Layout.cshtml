@@ -32,6 +32,10 @@
                                 <button type="submit" class="btn btn-link text-info">Logout</button>
                             </form>
                         </div>
+
+                        <div class="navbar__login nav__item__login">
+                            <a href="@Url.Action("Index", "UserRoom")">My Cars</a>
+                        </div>
                         
                     }
                     else
@@ -43,9 +47,6 @@
                             <a href="@Url.Action("Register", "Account")">Register</a>
                         </div>
                     }
-                    <div class="navbar__login nav__item__login">
-                        <a href="@Url.Action("Index", "Test")">Unreachable Info</a>
-                    </div>
                 </div>
             </div>
             <div class="sell-buy__container">

@@ -30,6 +30,7 @@ namespace CartopiaWeb.Repositories
                 Bodyshell = dbCar.Bodyshell,
                 PhoneNumber = dbCar.PhoneNumber,
                 Photo = dbCar.Photo,
+                CreatedById = dbCar.CreatedByUserId
             });
 
             return carList;
