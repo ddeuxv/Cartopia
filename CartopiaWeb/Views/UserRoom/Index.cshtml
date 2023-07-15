@@ -27,7 +27,11 @@
                         <div class="car__info__field">Price: @car.Price $</div>
                         <div class="car__info__field">Phone Number: @car.PhoneNumber</div>
 
-                        <a href='@Url.Action("Remove", "UserRoom", new { id = car.CreatedById })'><img src="~/img/delete.png" style="width: 20px" title="Delete"></a>
+                        <div style="display: flex; justify-content: flex-end; margin-right: 20px;">
+                            <a href='@Url.Action("Remove", "UserRoom", new { id = car.CreatedById })'>
+                                <img src="~/img/delete.png" style="width: 20px" title="Delete">
+                            </a>
+                        </div>
                     </div>
                 </div>
             }

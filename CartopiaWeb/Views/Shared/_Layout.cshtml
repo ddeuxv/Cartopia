@@ -21,34 +21,36 @@
                 <a href="@Url.Action("Index", "Home")">
                     <img src="~/img/logo-cartopia-main.png" alt="main__logo" class="header__main__logo nav__item__logo">
                 </a>
-                <div class="navbar__user__login">
+                <div class="navbar__login nav__item__login">
                     @if (SignInManager.IsSignedIn(User))
                     {
                         <div class="navbar__login nav__item__login">
                             <a class="text-dark" asp-controller="Home" asp-action="Index" title="Welcome">Welcome @User.Identity.Name!</a>
                         </div>
+
+                        <div class="navbar__login nav__item__login">
+                            <a href="@Url.Action("Index", "UserRoom")">My Cars</a>
+                        </div>
+
                         <div class="navbar__login nav__item__login">
                             <form class="form" asp-controller="Account" asp-action="Logout">
                                 <button type="submit" class="btn btn-link text-info">Logout</button>
                             </form>
                         </div>
-
-                        <div class="navbar__login nav__item__login">
-                            <a href="@Url.Action("Index", "UserRoom")">My Cars</a>
-                        </div>
-                        
                     }
                     else
                     {
                         <div class="navbar__login nav__item__login">
                             <a href="@Url.Action("Login", "Account", new { returnUrl = Context.Request.Path })">Login</a>
                         </div>
+                        
                         <div class="navbar__login nav__item__login">
                             <a href="@Url.Action("Register", "Account")">Register</a>
                         </div>
                     }
                 </div>
             </div>
+
             <div class="sell-buy__container">
                 <a class="buy__car__ref" href="@Url.Action("Index",  "Home")">Buy</a>
                 <a class="sell__car__ref" href="@Url.Action("SalePage",  "CarItemCreator")">Sale</a>
