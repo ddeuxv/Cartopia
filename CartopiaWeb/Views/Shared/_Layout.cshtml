@@ -24,8 +24,10 @@
                 <div class="navbar__login nav__item__login">
                     @if (SignInManager.IsSignedIn(User))
                     {
+                        var user = await UserManager.GetUserAsync(User);
+
                         <div class="navbar__login nav__item__login">
-                            <a class="text-dark" asp-controller="Home" asp-action="Index" title="Welcome">Welcome @User.Identity.Name!</a>
+                            <a class="text-dark" asp-controller="Home" asp-action="Index" title="Welcome">Welcome @user.FirstName @user.LastName</a>
                         </div>
 
                         <div class="navbar__login nav__item__login">
