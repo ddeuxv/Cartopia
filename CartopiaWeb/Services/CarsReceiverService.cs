@@ -2,15 +2,15 @@
 using CartopiaWeb.Interfaces;
 using CartopiaWeb.Models.DTOs;
 
-namespace CartopiaWeb.Repositories
+namespace CartopiaWeb.Services
 {
-    public class CarsReceiverRepository : ICarsReceiver
+    public class CarsReceiverService : ICarsReceiver
     {
 
         private readonly CartopiaDbContext _context;
 
 
-        public CarsReceiverRepository(CartopiaDbContext context)
+        public CarsReceiverService(CartopiaDbContext context)
         {
             _context = context;
         }

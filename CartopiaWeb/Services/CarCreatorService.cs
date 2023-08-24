@@ -1,9 +1,9 @@
 ﻿using CartopiaWeb.Interfaces;
 using CartopiaWeb.Models;
 
-namespace CartopiaWeb.Repositories
+namespace CartopiaWeb.Services
 {
-    public class CarCreatorRepository : ICarCreator
+    public class CarCreatorService : ICarCreator
     {
         public CarInfo CreateCar(CarInfo car, byte[] photoInBytes)
         {

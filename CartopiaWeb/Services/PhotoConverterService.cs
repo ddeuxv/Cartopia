@@ -1,12 +1,12 @@
 ﻿using CartopiaWeb.Interfaces;
 
-namespace CartopiaWeb.Repositories
+namespace CartopiaWeb.Services
 {
-    public class PhotoConverterRepository : IPhotoConverter
+    public class PhotoConverterService : IPhotoConverter
     {
         private readonly IWebHostEnvironment _env;
 
-        public PhotoConverterRepository(IWebHostEnvironment env)
+        public PhotoConverterService(IWebHostEnvironment env)
         {
             _env = env;
         }

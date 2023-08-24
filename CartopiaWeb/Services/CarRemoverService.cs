@@ -1,13 +1,13 @@
 ﻿using CartopiaWeb.Data;
 using CartopiaWeb.Interfaces;
 
-namespace CartopiaWeb.Repositories
+namespace CartopiaWeb.Services
 {
-    public class CarRemoverRepository : ICarEditor
+    public class CarRemoverService : ICarEditor
     {
         private readonly CartopiaDbContext _context;
 
-        public CarRemoverRepository(CartopiaDbContext context)
+        public CarRemoverService(CartopiaDbContext context)
         {
             _context = context;
         }
